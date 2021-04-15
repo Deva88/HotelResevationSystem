@@ -3,7 +3,6 @@ package com.hotel;
     @Description:- Find the cheapest Hotel for a given Date Range
  */
 public class Hotel {
-
     private final String name;
     private final Double rates;
 
@@ -15,16 +14,12 @@ public class Hotel {
     public String getName() {
         return name;
     }
-
     public Double getRates() {
         return rates;
     }
 
     @Override
     public String toString() {
-        return "Hotel{" +
-                "name='" + name + '\'' +
-                ", rates=" + rates +
-                '}';
+        return "Hotel{" + "name='" + name + '\'' + ", rates=" + rates + '}';
     }
 }
