@@ -1,7 +1,6 @@
 package com.hotel;
 import java.util.ArrayList;
 import java.util.List;
-
 /*
 @Description:-Add Hotel in a Hotel Reservation System
  */
