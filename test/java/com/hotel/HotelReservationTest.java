@@ -1,10 +1,10 @@
 package com.hotel;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.junit.jupiter.api.Assertions;
 
 public class HotelReservationTest {
     HotelReservation hotelReservation = new HotelReservation();
@@ -13,9 +13,8 @@ public class HotelReservationTest {
     public void checkedGivenHotelNameAndRateAreAdded_True()
     {
         boolean result = hotelReservation.addHotel("Lakewood",110.0);
-        Assert.assertTrue(result);
+        Assertions.assertTrue(result);
     }
-
     @Test
     public void givenBookingDate_ShouldReturn_CheapestHotel(){
         SimpleDateFormat df = new SimpleDateFormat("ddMMMMyyyy");
@@ -32,10 +31,18 @@ public class HotelReservationTest {
             }else
                 System.out.println("Valid Date");
         }
-        boolean result = hotelReservation.addHotel("Hyatt", 999.00) &&
+        boolean result =hotelReservation.addHotel("Hyatt", 959.00) &&
                 hotelReservation.addHotel("Lemon Tree", 1250.00) &&
-                hotelReservation.addHotel("Ginger", 1500.00);
-        if (result)
-            Assert.assertEquals("Hyatt", hotelReservation.findCheapestHotel(inputDate));
+                hotelReservation.addHotel("OYO", 1500.00);
+        //if (result)
+        Assertions.assertEquals("Hyatt", hotelReservation.findCheapestHotel(inputDate));
+    }
+    @Test
+    public void givenWeekDayAndWeekendRatesForHotels_WhenAdded_ShouldReturn_TRUE() {
+        boolean result =hotelReservation.addHotelRates("Hyatt", 950.00, 1200.00) &&
+                hotelReservation.addHotelRates("Lemon Tree", 1250.00, 1350.00) &&
+                hotelReservation.addHotelRates("OYO", 1500.00, 1800.00);
+        Assertions.assertTrue(result);
     }
 }
+
