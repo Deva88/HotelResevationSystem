@@ -1,14 +1,30 @@
 package com.hotel;
 /*
-    @Description:- Reservation System with name and rate for Regular customer
+    @Description:- Find the cheapest Hotel for a given Date Range
  */
-public class Hotel
-{
-    String hotelName;
-    int rates;
-    public Hotel(String hotelName,int rates)
-    {
-        this.hotelName=hotelName;
-        this.rates=rates;
+public class Hotel {
+
+    private final String name;
+    private final Double rates;
+
+    public Hotel(String name, Double rates) {
+        this.name = name;
+        this.rates = rates;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Double getRates() {
+        return rates;
+    }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "name='" + name + '\'' +
+                ", rates=" + rates +
+                '}';
     }
 }
